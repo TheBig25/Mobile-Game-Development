@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7636030041136260815}
   - component: {fileID: 305577861049366884}
+  - component: {fileID: 5302089492772409539}
   m_Layer: 0
   m_Name: Device Info Overlay
   m_TagString: Untagged
@@ -44,3 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 879b4e6fe6f38cd4a8206281c968ee2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeviceInfoOverlay
+--- !u!114 &5302089492772409539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861340692665677985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3eb7756455fe340b7b94d34ac296d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LifecycleLogger
