@@ -66,6 +66,11 @@ public class PlayerManager : MonoBehaviour
     public InputAction shootAction;
     public InputAction boostAction;
 
+    [Header("Input Refs")]
+    [SerializeField] InputActionReference moveIAction;
+    [SerializeField] InputActionReference shootIAction;
+    [SerializeField] InputActionReference boostIAction;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
