@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: edb47126d83cb634b9a898e94eb47456
+  productGUID: 63530e96ea3989c4f9cfd3ac7046f0e8
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -817,7 +817,8 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: SENTIS_ANALYTICS_ENABLED
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -916,10 +917,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 7b6ce3c2-db4d-4a5b-8d61-4d650023168d
+  cloudProjectId: e2e2223d-b87d-4a3d-a2ae-6e850528d113
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Lab 4-5
+  projectName: Lab 4-5 2026-10-15_11-34-56
   organizationId: bonjamm111
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
