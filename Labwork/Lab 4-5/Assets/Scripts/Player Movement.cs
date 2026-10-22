@@ -7,12 +7,13 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] public int pScore = 0;
+    [SerializeField] public float timeLimit;
 
     private Rigidbody2D rb2d;
 
     public InputAction moveAction;
     public TextMeshProUGUI scoreText;
-
+    public TextMeshProUGUI timeText;
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -36,6 +37,17 @@ public class PlayerMovement : MonoBehaviour
         cameraBounds.x = Mathf.Clamp01(cameraBounds.x);
         cameraBounds.y = Mathf.Clamp01(cameraBounds.y);
         transform.position = Camera.main.ViewportToWorldPoint(cameraBounds);
+
+        //Decrease time
+        if (timeLimit > 0)
+        {
+            timeLimit -= Time.deltaTime;
+            timeText.text = "Time Remaining: " + timeLimit.ToString();
+            float minutes = Mathf.FloorToInt(timeLimit / 60);
+            float seconds = Mathf.FloorToInt(timeLimit % 60);
+
+            timeText.text = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

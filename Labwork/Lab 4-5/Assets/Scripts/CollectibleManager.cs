@@ -16,7 +16,7 @@ public class CollectibleManager : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         GameObject player = GameObject.Find("Player");
-        playerMovement = player.GetComponent<PlayerMovement>();
+        
     }
 
     // Update is called once per frame
