@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,18 +10,22 @@ public class UIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Player finding
-        playerMovement = FindFirstObjectByType<PlayerMovement>();
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Score Text
-        if (playerMovement != null)
-        {
-            
-        }
+        
     }
+    public void RestartGame() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitGame() 
+    {
+        Application.Quit();
+    }   
 }
