@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI endScoreText;
+    public TextMeshProUGUI hiScoreText;
 
     public TextMeshProUGUI timeText;
 
