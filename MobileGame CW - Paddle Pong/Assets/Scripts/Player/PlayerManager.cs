@@ -22,33 +22,22 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        HandleKeyboardMovement();
+        HandleMotionMovement();
         HandleTouchMovement();
         ClampPosition();
     }
 
-
-
-    void HandleKeyboardMovement()
+    void HandleMotionMovement()
     {
-        float movement = 0f;
-
-        //Keyboard inputs
-        if (Input.GetKey(KeyCode.W))
-        {
-            movement = moveSpeed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            movement = -moveSpeed * Time.deltaTime;
-        }
+        // Tilting the device towards the player moves the player down
+        float movement = -Input.acceleration.y * moveSpeed * Time.deltaTime;
 
         transform.position += new Vector3(0f, movement, 0f);
     }
 
     void HandleTouchMovement()
     {
-        //Touch inputs
+        // Touch inputs
         if (Input.touchCount == 0)
         {
             isDragging = false;
@@ -57,13 +46,13 @@ public class PlayerManager : MonoBehaviour
 
         Touch touch = Input.GetTouch(0);
 
-        //If the touch has just begun, set dragging to true
+        //Set dragging to true when finger touches the screen
         if (touch.phase == TouchPhase.Began)
         {
             lastTouchPosition = touch.position;
             isDragging = true;
         }
-        //Else if the touch is moving and dragging is true, update the player's position
+        //Update player position based on touch movement
         else if (touch.phase == TouchPhase.Moved && isDragging)
         {
             Camera mainCamera = Camera.main;
@@ -87,7 +76,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         //Stop moving when finger lifted
-        else if (touch.phase == TouchPhase.Ended ||touch.phase == TouchPhase.Canceled)
+        else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
         {
             isDragging = false;
         }
