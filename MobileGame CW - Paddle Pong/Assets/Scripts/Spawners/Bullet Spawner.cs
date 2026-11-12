@@ -38,7 +38,6 @@ public class BulletSpawner : MonoBehaviour
 
         //Spawn bullet between player bounds
         float spawnY = Random.Range(player.BottomBound, player.TopBound);
-
         Vector3 spawnPosition = new Vector3(transform.position.x, spawnY,transform.position.z);
         Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
     }

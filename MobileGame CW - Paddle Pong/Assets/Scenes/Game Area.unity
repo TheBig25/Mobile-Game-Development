@@ -394,6 +394,51 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &1061428665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1061428667}
+  - component: {fileID: 1061428666}
+  m_Layer: 0
+  m_Name: UI Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1061428666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061428665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fbc3993efb68a14caa923246392d594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameUIManager
+  scoreText: {fileID: 1971271108}
+--- !u!4 &1061428667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061428665}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.45183, y: 0.80009, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1341984754
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,7 +465,7 @@ Transform:
   m_GameObject: {fileID: 1341984754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.07, y: -0.06, z: 0}
+  m_LocalPosition: {x: 8.91, y: -0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -439,7 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletSpawner
   bulletPrefab: {fileID: 4331085202526483651, guid: f43e9745b2dfaaf468f7288d8980396e, type: 3}
-  spawnInterval: 2
+  spawnInterval: 1
 --- !u!1 &1669599897
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +877,7 @@ MonoBehaviour:
   moveSpeed: 15
   topBound: 3.25
   bottomBound: -3.25
+  playerScore: 0
 --- !u!212 &7380103844332381099
 SpriteRenderer:
   serializedVersion: 2
@@ -963,3 +1009,4 @@ SceneRoots:
   - {fileID: 791871928}
   - {fileID: 1669599900}
   - {fileID: 1341984755}
+  - {fileID: 1061428667}

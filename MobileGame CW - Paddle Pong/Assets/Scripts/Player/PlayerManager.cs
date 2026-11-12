@@ -8,11 +8,17 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] float topBound;
     [SerializeField] float bottomBound;
 
+    [SerializeField] public int playerScore;
     public float TopBound => topBound;
     public float BottomBound => bottomBound;
 
     Vector2 lastTouchPosition;
     bool isDragging;
+
+    private void Awake()
+    {
+        playerScore = 0;
+    }
 
     void Update()
     {
@@ -93,5 +99,19 @@ public class PlayerManager : MonoBehaviour
         Vector3 position = transform.position;
         position.y = Mathf.Clamp(position.y, bottomBound, topBound);
         transform.position = position;
+    }
+
+    //When bullet hits player, add to score
+    public void AddScore(int scoreToAdd)
+    {
+        playerScore += scoreToAdd;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            AddScore(100);
+        }
     }
 }
