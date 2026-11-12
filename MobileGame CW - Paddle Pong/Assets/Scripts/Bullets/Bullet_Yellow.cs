@@ -5,6 +5,7 @@ public class Bullet_Yellow : MonoBehaviour
     public float bulletSpeed = 10;
     private Rigidbody2D rb;
     private int direction = -1;
+    public int vibrateDurationMS = 100; //Milliseconds
 
     //Start is called before the first frame update
     void Start()
@@ -24,6 +25,9 @@ public class Bullet_Yellow : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             direction = 1;
+
+            //Vibrate on collision
+            ////Handheld.Vibrate();
         }
     }
 
