@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     public float TopBound => topBound;
     public float BottomBound => bottomBound;
 
+
     Vector2 lastTouchPosition;
     bool isDragging;
 
@@ -22,28 +23,8 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        HandleKeyboardMovement();
         HandleTouchMovement();
         ClampPosition();
-    }
-
-
-
-    void HandleKeyboardMovement()
-    {
-        float movement = 0f;
-
-        //Keyboard inputs
-        if (Input.GetKey(KeyCode.W))
-        {
-            movement = moveSpeed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            movement = -moveSpeed * Time.deltaTime;
-        }
-
-        transform.position += new Vector3(0f, movement, 0f);
     }
 
     void HandleTouchMovement()
@@ -57,13 +38,13 @@ public class PlayerManager : MonoBehaviour
 
         Touch touch = Input.GetTouch(0);
 
-        //If the touch has just begun, set dragging to true
+        //Set dragging to true when finger touches the screen
         if (touch.phase == TouchPhase.Began)
         {
             lastTouchPosition = touch.position;
             isDragging = true;
         }
-        //Else if the touch is moving and dragging is true, update the player's position
+        //Update player position based on touch movement
         else if (touch.phase == TouchPhase.Moved && isDragging)
         {
             Camera mainCamera = Camera.main;
@@ -87,7 +68,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         //Stop moving when finger lifted
-        else if (touch.phase == TouchPhase.Ended ||touch.phase == TouchPhase.Canceled)
+        else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
         {
             isDragging = false;
         }
@@ -112,6 +93,8 @@ public class PlayerManager : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             AddScore(100);
+            //Vibrate on collision
+            Handheld.Vibrate();
         }
     }
 }

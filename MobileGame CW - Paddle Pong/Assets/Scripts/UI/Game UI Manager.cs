@@ -28,4 +28,12 @@ public class GameUIManager : MonoBehaviour
             scoreText.text = "Score: " + playerManager.playerScore.ToString();
         }
     }
+
+    void RecentrePlayer()
+    {
+        if (playerManager != null)
+        {
+            playerManager.transform.position = new Vector3(playerManager.transform.position.x, 0f, playerManager.transform.position.z);
+        }
+    }
 }
