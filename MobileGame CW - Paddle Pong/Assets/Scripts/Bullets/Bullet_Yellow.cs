@@ -24,10 +24,7 @@ public class Bullet_Yellow : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            direction = 1;
-
-            //Vibrate on collision
-            ////Handheld.Vibrate();
+            direction = 1;         
         }
     }
 

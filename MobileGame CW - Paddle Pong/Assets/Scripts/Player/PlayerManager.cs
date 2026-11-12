@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     public float TopBound => topBound;
     public float BottomBound => bottomBound;
 
+
     Vector2 lastTouchPosition;
     bool isDragging;
 
@@ -22,22 +23,13 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        HandleMotionMovement();
         HandleTouchMovement();
         ClampPosition();
     }
 
-    void HandleMotionMovement()
-    {
-        // Tilting the device towards the player moves the player down
-        float movement = -Input.acceleration.y * moveSpeed * Time.deltaTime;
-
-        transform.position += new Vector3(0f, movement, 0f);
-    }
-
     void HandleTouchMovement()
     {
-        // Touch inputs
+        //Touch inputs
         if (Input.touchCount == 0)
         {
             isDragging = false;
@@ -101,6 +93,8 @@ public class PlayerManager : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             AddScore(100);
+            //Vibrate on collision
+            Handheld.Vibrate();
         }
     }
 }
