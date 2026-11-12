@@ -8,6 +8,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] float topBound;
     [SerializeField] float bottomBound;
 
+    public float TopBound => topBound;
+    public float BottomBound => bottomBound;
+
     Vector2 lastTouchPosition;
     bool isDragging;
 

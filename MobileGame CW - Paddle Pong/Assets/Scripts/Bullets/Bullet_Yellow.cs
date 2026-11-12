@@ -27,6 +27,15 @@ public class Bullet_Yellow : MonoBehaviour
         }
     }
 
+    //Ignore bullets colliding with each other
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+        }
+    }
+
     //Destroy off screen
     void OnBecameInvisible()
     {
