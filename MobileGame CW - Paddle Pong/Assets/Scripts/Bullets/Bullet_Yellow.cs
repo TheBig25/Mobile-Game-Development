@@ -35,6 +35,7 @@ public class Bullet_Yellow : MonoBehaviour
         {
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
         }
+        
     }
 
     //Destroy off screen

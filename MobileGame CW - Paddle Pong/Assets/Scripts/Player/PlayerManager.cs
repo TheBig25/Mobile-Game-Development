@@ -25,6 +25,7 @@ public class PlayerManager : MonoBehaviour
     {
         HandleTouchMovement();
         ClampPosition();
+        KeyboardMovement();
     }
 
     void HandleTouchMovement()
@@ -82,6 +83,14 @@ public class PlayerManager : MonoBehaviour
         transform.position = position;
     }
 
+    void KeyboardMovement()
+    {
+        //Keyboard inputs
+        float verticalInput = Input.GetAxis("Vertical");
+        Vector3 movement = new Vector3(0f, verticalInput * moveSpeed * Time.deltaTime, 0f);
+        transform.position += movement;
+    }
+
     //When bullet hits player, add to score
     public void AddScore(int scoreToAdd)
     {
@@ -94,7 +103,7 @@ public class PlayerManager : MonoBehaviour
         {
             AddScore(100);
             //Vibrate on collision
-            Handheld.Vibrate();
+            //Handheld.Vibrate();
         }
     }
 }
